@@ -1,2 +1,7 @@
+<details><summary>Click for Solution Code</summary>
+  
+```js
+console.log('This would be a great feature for hiding the solutions ')
+```
 
-Here is some content.
+</details>
