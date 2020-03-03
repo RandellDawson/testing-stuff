@@ -29,4 +29,5 @@ mergeable:
                     Input : {{{details.input}}}
                     Settings : {{{displaySettings details.settings}}}
                   {{/each}}
-                {{/each}}          
+                {{/each}}"
+                
