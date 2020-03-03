@@ -1,0 +1,18 @@
+version: 2
+mergeable:
+  - when: pull_request.opened, pull_request.synchronize # can be one or more
+    validate:
+      - do: label
+        and:
+          - must_exclude:
+            regex: 'status: i18n check required'
+            message: 'A member of translation team needs to review this PR'
+          - must_exclude:
+            regex: 'status: English reviewers needed'
+            message: ''
+      - do: approvals
+        min:
+          count: 2
+          message: 'At least two approvals must be given.'
+          required:
+          reviewers: [ randelldawson, ojeytonwilliams ] # list of github usernames required to review
