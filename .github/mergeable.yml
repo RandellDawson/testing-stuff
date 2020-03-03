@@ -17,4 +17,4 @@ mergeable:
         payload:
           title: 'Mergeable Run have been Completed!'
           summary: "Status: {{toUpperCase validationStatus}}"
-          text: "fun"
+          text: 'fun'
