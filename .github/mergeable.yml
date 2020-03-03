@@ -9,6 +9,6 @@ mergeable:
       - do: approvals
         min:
           count: 1
-          message: 'At least two approvals must be given.'
+          message: 'At least one approval must be given.'
         required:
-          reviewers: [ randelldawson, ojeytonwilliams, krherrmann ] # list of github usernames required to review         
+          reviewers: [ krherrmann ] # list of github usernames required to review         
