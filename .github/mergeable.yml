@@ -1,14 +1,14 @@
 version: 2
 mergeable:
-  - when: pull_request.opened, pull_request.synchronize # can be one or more
+  - when: pull_request.opened, pull_request.synchronize
     validate:
       - do: label
         must_exclude:
           regex: 'status: i18n check required'
-          message: 'A member of translation team needs to review this PR'
+          message: This is work in progress. Do not merge yet.
         must_include:
-          regex 'ready to go'
-          message: 'Please add ready to go label so PR can be merged.'
+          regex: ready to go
+          message: Please add ready to go label so PR can be merged          
 #      - do: approvals
 #        min:
 #          count: 1
