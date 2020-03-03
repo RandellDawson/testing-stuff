@@ -3,9 +3,9 @@ mergeable:
   - when: pull_request.opened, pull_request.synchronize, pull_request.labeled, pull_request.unlabeled
     validate:
       - do: label
-        must_include:
-          regex: ready to go
-          message: Please add ready to go label so PR can be merged          
+        must_exclude:
+          regex: 'status: i18n check required|status: needs an english review'
+          message: Must not need any reviews          
 #      - do: approvals
 #        min:
 #          count: 1
