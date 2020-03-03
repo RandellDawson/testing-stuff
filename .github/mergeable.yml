@@ -12,9 +12,3 @@ mergeable:
           message: 'At least one approval must be given.'
         required:
           reviewers: [ krherrmann ] # list of github usernames required to review
-      - do: checks # default fail case
-        status: 'failure' # Can be: success, failure, neutral, cancelled, timed_out, or action_required
-        payload:
-          title: 'Mergeable Run have been Completed!'
-          summary: "Status: {{toUpperCase validationStatus}}"
-          text: 'fun'
