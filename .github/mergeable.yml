@@ -5,7 +5,7 @@ mergeable:
       - do: label
         must_exclude:
           regex: 'status: i18n check required|status: needs an english review'
-          message: Must not need any reviews          
+          message: Must not need any reviews
       - do: approvals
         min:
           count: 1
@@ -30,4 +30,3 @@ mergeable:
                     Settings : {{{displaySettings details.settings}}}
                   {{/each}}
                 {{/each}}"
-                
