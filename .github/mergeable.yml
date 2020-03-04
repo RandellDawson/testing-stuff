@@ -17,7 +17,7 @@ mergeable:
             reviewers: [ ojeytonwilliams ]
     fail:
       - do: checks
-        status: 'fail' # Can be: success, failure, neutral, cancelled, timed_out, or action_required
+        status: failure
         payload:
           title: 'Mergeable Run has completed!'
           summary: "### Status: {{toUpperCase validationStatus}}
