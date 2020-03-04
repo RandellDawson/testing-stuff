@@ -16,5 +16,5 @@ mergeable:
         status: 'failure' # Can be: success, failure, neutral, cancelled, timed_out, or action_required
         payload:
           title: 'Mergeable Run have been Completed!'
-          summary: "Statuseseses: {{toUpperCase validationStatus}} \n Stats below \n {{validationCount}} validations were ran \n {{passCount}} PASSED \n {{failCount}} FAILED"
+          summary: "Statuseseses: {{validationStatus}} \n Stats below \n {{validationCount}} validations were ran \n {{passCount}} PASSED \n {{failCount}} FAILED"
           text: 'nothing good here'
