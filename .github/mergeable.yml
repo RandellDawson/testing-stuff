@@ -19,12 +19,14 @@ mergeable:
       - do: checks
         status: failure
         payload:
-          title: 'Mergeable Run has completed!'
+          title: 'Mergeable Run has completed with failures!'
           summary: "### Status: {{toUpperCase validationStatus}}
                      Here are some stats of the run:
                      {{validationCount}} validations were ran.
                      {{passCount}} PASSED
                      {{failCount}} FAILED"
-          text: "{{#each validationSuites}} #### {{{statusIcon status}}} Validator: {{toUpperCase name}}
-                  {{#each validations }} * {{{statusIcon status}}} ***{{{ description }}}*** {{/each}}
-                {{/each}}"
+          text: "{{#each validationSuites}}
+            #### {{{statusIcon status}}} Validator: {{toUpperCase name}}
+            {{#each validations }} * {{{statusIcon status}}} ***{{{ description }}}***
+              Settings : {{{displaySettings details.settings}}} {{/each}}
+            {{/each}}"
