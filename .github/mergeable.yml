@@ -4,7 +4,7 @@ mergeable:
     validate:
       - do: label
         must_include:
-          regex: 'status: initial review(s) complete'
+          regex: 'status: initial review\(s\) complete'
           message: 'The `initial review complete` label must be present or PR is not mergeable.'
         must_exclude:
           regex: 'status: i18n check required'
