@@ -12,12 +12,7 @@ mergeable:
       - do: approvals
         min:
           count: 1
-          message: 'At least one approval must be given.'
-        or:
-          - required:
-            reviewers: [ krherrmann ]
-          - required:
-            reviewers: [ ojeytonwilliams ]
+          message: 'At least one approval must be given or PR is not mergeable.'
     fail:
       - do: checks
         status: failure
@@ -30,5 +25,5 @@ mergeable:
                      {{failCount}} FAILED"
           text: "{{#each validationSuites}}
             #### {{{statusIcon status}}} Validator: {{toUpperCase name}}\n
-            {{#each validations }} * {{{statusIcon status}}} ***{{{ description }}}***\n{{/each}}
+            {{#each validations }} * {{{statusIcon status}}} ***{{{ description }}}***{{/each}}
             {{/each}}"
