@@ -3,9 +3,12 @@ mergeable:
   - when: pull_request.opened, pull_request.synchronize, pull_request.labeled, pull_request.unlabeled
     validate:
       - do: label
+        must_include:
+          regex: 'status: initial review(s) complete'
+          message: `initial review complete` label must be present or PR is not mergeable.
         must_exclude:
-          regex: 'status: i18n check required|status: needs an english review'
-          message: Must not need any reviews
+          regex: 'status: i18n check required'
+          message: When `status: i18n check required` is present, PR is not mergeable.
       - do: approvals
         min:
           count: 1
