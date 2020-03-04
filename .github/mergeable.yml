@@ -5,10 +5,10 @@ mergeable:
       - do: label
         must_include:
           regex: 'status: initial review(s) complete'
-          message: `initial review complete` label must be present or PR is not mergeable.
+          message: 'The `initial review complete` label must be present or PR is not mergeable.'
         must_exclude:
           regex: 'status: i18n check required'
-          message: When `status: i18n check required` is present, PR is not mergeable.
+          message: 'When the `status: i18n check required` is present, PR is not mergeable.'
       - do: approvals
         min:
           count: 1
