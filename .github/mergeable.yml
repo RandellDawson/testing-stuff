@@ -25,5 +25,5 @@ mergeable:
                      {{failCount}} FAILED"
           text: "{{#each validationSuites}}
             #### {{{statusIcon status}}} Validator: {{toUpperCase name}}\n
-            {{#each validations }} * {{{statusIcon status}}} ***{{{ description }}}***{{/each}}
+            {{#each validations }} * {{{statusIcon status}}} ***{{{ description }}}***\n{{/each}}
             {{/each}}"
