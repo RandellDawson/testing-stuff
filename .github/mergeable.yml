@@ -13,7 +13,7 @@ mergeable:
         required:
           reviewers: [ krherrmann ] # list of github usernames required to review
       - do: checks
-        status: 'failure' # Can be: success, failure, neutral, cancelled, timed_out, or action_required
+        status: 'fail' # Can be: success, failure, neutral, cancelled, timed_out, or action_required
         payload:
           title: 'Mergeable Run have been Completed!'
           summary: "Statuseseses: {{validationStatus}} \n Stats below \n {{validationCount}} validations were ran \n {{passCount}} PASSED \n {{failCount}} FAILED"
