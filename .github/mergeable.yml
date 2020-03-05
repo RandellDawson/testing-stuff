@@ -13,17 +13,3 @@ mergeable:
         min:
           count: 1
           message: 'At least one approval must be given or PR is not mergeable.'
-    fail:
-      - do: checks
-        status: failure
-        payload:
-          title: 'Mergeable Run has completed with failures!'
-          summary: "### Status: {{toUpperCase validationStatus}}\n
-                     Here are some stats of the run:\n
-                     {{validationCount}} validations were ran.\n
-                     {{passCount}} PASSED\n
-                     {{failCount}} FAILED"
-          text: "{{#each validationSuites}}
-            #### {{{statusIcon status}}} Validator: {{toUpperCase name}}\n
-            {{#each validations }} * {{{statusIcon status}}} ***{{{ description }}}***\n{{/each}}
-            {{/each}}"
