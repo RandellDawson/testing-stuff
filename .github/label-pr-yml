@@ -1,2 +1,0 @@
-- regExp: ".*\\.txt+$"
-  labels: ["text file"]
