@@ -14,4 +14,4 @@ jobs:
     - name: No i18n review required
       if: success()
       run: |
-        exit 0
+        echo 'fun times'
