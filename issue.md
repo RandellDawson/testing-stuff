@@ -5,6 +5,8 @@
 - [ ] <a href="https://github.com/freeCodeCamp/freeCodeCamp/blob/master/curriculum/challenges/english/01-responsive-web-design/basic-css/change-the-color-of-text.english.md" target="_blank">Change the Color of Text</a>
 - **The following test `text`(s) do not match:**
   **Test 2**
+  
+  
   <table>
   <tr>
   <th>
