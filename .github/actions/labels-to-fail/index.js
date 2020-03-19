@@ -2,15 +2,21 @@ const core = require("@actions/core");
 const github = require("@actions/github");
 
 try {
-  const labelsToFail = core.getInput("labels-to-fail");
-  if (!Array.isArray(labelsToFail)) {
-    throw new Error('Input labels-to-fail should be an array');
+  const labelsToFailString = core.getInput("labels-to-fail");
+  const labelsToFail = labelsToFailString.split(',');
+  if (!Array.isArray(labelsToFail) && labelsToFail.length) {
+    throw new Error('Input labels-to-fail should be a comma separated string');
   }
 
-  const prLabels = github.context.payload.pull_request.labels;
-  console.log('PR Labels: ' + JSON.stringify(prLabels));
-  if ( prLabels.some(prLabel => labelsToFail.includes(prLabel))) {
-    console.log('Found a label to fail on this PR');
+  let { pull_request: { labels: prLabels } } = github.context.payload;
+  prLabels = prLabels.map(({ name }) => name);
+  const failedLabelsFound = prLabels.filter(
+    labelName => labelsToFail.includes(labelName)
+  );
+  if (failedLabelsFound.length){
+    const labels = failedLabelsFound.join(", ");
+    console.log(`Labels to Fail found: ${labels}`);
+    throw new Error(`Labels to Fail found: ${labels}`);
   }
   process.exit(0);
 } catch (error) {
