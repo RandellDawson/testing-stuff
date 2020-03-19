@@ -11,7 +11,3 @@ jobs:
       if: "contains(github.event.pull_request.labels.*.name, 'status: i18n review required')"
       run: |
         exit 1
-    - name: No i18n review required
-      if: success()
-      run: |
-        exit 0
