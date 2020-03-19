@@ -4,7 +4,7 @@ inputs:
   labels-to-fail:
     description: 'Labels to fail'
     required: true
-    default: ['status: blocked']
+    default: 'status: blocked'
 runs:
   using: 'node12'
   main: 'dist/index.js'
