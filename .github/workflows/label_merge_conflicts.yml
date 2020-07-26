@@ -1,7 +1,7 @@
 
 name: 'Check for merge conflicts'
 on:
-  push:
+  push
 jobs:
   triage:
     runs-on: ubuntu-latest
