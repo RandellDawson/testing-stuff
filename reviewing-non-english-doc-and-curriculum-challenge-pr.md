@@ -4,7 +4,7 @@ Please see my comment on freeCodeCamp/freeCodeCamp#35365. If you see differences
 
 An alternate approach is instead of you taking the time to look for changes yourself, just compare the dates and make a generic comment regarding the fact that the English version has changed since their PR was created and you would like them to please review the latest English version again and make any translations needed to get them to match. If after 21 days, nothing is fixed and no response is given, then you actually do your review by comparing the current English vs on master compared to the overall content showing in the PR. You can then just close with applicable message letting the contributor know they need to review master again and submit a new PR after updating their fork.
 
-There are probably a couple of other ways to approach this, but I think the 2nd approach above will help in conjunction with using the Moderator Tools' Pareto view (see below). There are many challenge files across some of the languages which have multiple PRs against them and most have situations where the English version has been changed.
+There are probably several ways to approach this, but I think the 2nd approach above will help in conjunction with using the Moderator Tools' Pareto view (see below). There are many challenge files across some of the languages which have multiple PRs against them and most have situations where the English version has been changed.
 
 <img src="https://files.gitter.im/FreeCodeCamp/Contributors/bCZI/image.png" width="400" alt="Sample Pareto View"/>
 
