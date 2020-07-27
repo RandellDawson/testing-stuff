@@ -1,7 +1,8 @@
 
 name: 'Check for merge conflicts'
 on:
-  push
+  branches:    
+    - !master
 jobs:
   triage:
     runs-on: ubuntu-latest
