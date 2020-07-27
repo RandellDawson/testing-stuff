@@ -1,1 +1,1 @@
-has invalid language directory and invalid valid file name
+This file is part of an invalid language directory.
