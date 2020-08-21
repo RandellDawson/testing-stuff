@@ -9,3 +9,4 @@ console.log('This would be a great feature for hiding the solutions ')
 funny
 really
 djfjfj
+<a href="http://stackoverflow.com" target="_blank">Go</a>
