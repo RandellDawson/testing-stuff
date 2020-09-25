@@ -1,0 +1,2 @@
+'scope: learn':
+  - curriculum/challenges/**/*.md
