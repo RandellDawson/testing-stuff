@@ -1,20 +1,5 @@
 'scope: learn':
-  - curriculum/challenges/**
+  - curriculum/challenges/**/*
   
 'status: need to test locally':
-  - curriculum/challenges/**
-  
-'language: English':
-  - english/**
-
-'language: Chinese':
-  - chinese/**
-  
-'language: Arabic':
-  - arabic/**
- 
-'language: Spanish':
-  - spanish/**
-
-'language: Portuguese':
-  - portuguese/**
+  - curriculum/challenges/**/*
