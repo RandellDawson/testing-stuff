@@ -5,16 +5,16 @@
   - ./curriculum/challenges/**/*
   
 'language: English':
-  - english/**/*
+  - english
 
 'language: Chinese':
-  - chinese/**/*
+  - chinese
   
 'language: Arabic':
-  - arabic/**/*
+  - arabic
  
 'language: Spanish':
-  - spanish/**/*
+  - spanish
 
 'language: Portuguese':
-  - portuguese/**/*
+  - portuguese
