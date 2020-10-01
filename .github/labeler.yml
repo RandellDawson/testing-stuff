@@ -1,5 +1,0 @@
-'scope: learn':
-  - curriculum/challenges/**/*
-  
-'status: need to test locally':
-  - curriculum/challenges/**/*
