@@ -1,0 +1,7 @@
+{
+  "rules": {
+    "scope: learn": "curriculum/challenges/",
+    "status: needs to test locally: "curriculum/challenges/",
+    "language: English": "english/"
+  }
+}
