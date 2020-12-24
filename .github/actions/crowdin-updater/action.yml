@@ -1,9 +1,5 @@
 name: 'Crowdin Updater'
 description: 'Upates Crowdin files in the curriculum project for a merged PR'
-inputs:
-  pr-num:
-    description: 'PR number merged'
-    required: true
 runs:
   using: 'node12'
   main: 'dist/index.js'
