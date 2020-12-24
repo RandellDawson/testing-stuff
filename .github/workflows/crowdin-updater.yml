@@ -15,4 +15,4 @@ jobs:
     - name: Run crowdin-updater action
       uses: ./.github/actions/crowdin-updater
       with:
-        pr-num: github.event.pull_request.number
+        pr-num: context.payload.number
