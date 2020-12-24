@@ -14,5 +14,3 @@ jobs:
       uses: actions/checkout@v2
     - name: Run crowdin-updater action
       uses: ./.github/actions/crowdin-updater
-      with:
-        pr-num: ${{context.payload.number}}
