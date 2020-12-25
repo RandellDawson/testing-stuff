@@ -9,5 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      run: |
-        echo ${GITHUB_SHA}
+      uses: actions/checkout@v2
+    - name: Update Crowdin based on pushed commit
+      uses: ./.github/actions/crowdin-updater
+      with:
+        commit-sha: ${GITHUB_SHA}
