@@ -22,13 +22,14 @@ const getOutputFromCommand = async (command) => {
     const diffCommand = `git show -m --name-status ${commit}^..${commit}`;
     const diff = await getOutputFromCommand(diffCommand);
     core.info(diff);
-    const files = diff.split('\n');
+    const files = diff && diff.split('\n');
     if (files && file.length) {
       for (let file of files) {
         const [ change, filename ] = file.split(/\s+/);
         core.info(change + ' - ' + filename);
       }
     }
+    core.info('done');
     process.exit();
     let prevCommitCommand = `git show ${commit}^:${filepath}`;
     let currCommitCommand = `git show ${commit}:${filepath}`;
