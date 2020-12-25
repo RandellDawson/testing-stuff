@@ -19,7 +19,7 @@ const getOutputFromCommand = async (command) => {
     const commit = core.getInput('commit-sha');
     core.info(`commit #${commit} was pushed`);
     const exec = util.promisify(require('child_process').exec);
-    const diffCommand = `git show -m --name-status ${commit}^..${commit}`;
+    const diffCommand = `git diff -m --name-status ${commit}^..${commit}`;
     const diff = await getOutputFromCommand(diffCommand);
     core.info(diff);
     const files = diff && diff.split('\n');
