@@ -3,11 +3,7 @@ description: 'Upates Crowdin files in the curriculum project for a merged PR'
 inputs:
   commit-sha:
     description: 'The commit number pushed'
-    required: true
-
-  github-token:
-    description: 'GitHub personal access token'
-    default: ${{ github.token }}
+    default: ${{ github.sha }}
 runs:
   using: 'node12'
   main: 'dist/index.js'
