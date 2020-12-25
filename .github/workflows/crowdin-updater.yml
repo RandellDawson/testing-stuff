@@ -1,16 +1,13 @@
 name: Update Crowdin files
 on:
-  pull_request:
+  push:
     branches:
       - master
-    types: [closed]
 
 jobs:
   updateCrowdin:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.merged == true
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
-    - name: Run crowdin-updater action
-      uses: ./.github/actions/crowdin-updater
+      run: |
+        echo ${GITHUB_SHA}
