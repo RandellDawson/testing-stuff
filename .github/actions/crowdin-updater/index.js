@@ -1,5 +1,6 @@
 const core = require("@actions/core");
 const util = require('util');
+const exec = util.promisify(require('child_process').exec);
 
 const getOutputFromCommand = async (command) => {
   try {
@@ -10,7 +11,8 @@ const getOutputFromCommand = async (command) => {
     console.log('we have an error');
     console.log('command');
     console.log(command + '\n');
-    return undefined
+    console.log(err.stderr);
+    return null;
   };
 };
 
@@ -18,20 +20,22 @@ const getOutputFromCommand = async (command) => {
   try {
     const commit = core.getInput('commit-sha');
     core.info(`commit #${commit} was pushed`);
-    const exec = util.promisify(require('child_process').exec);
-    const command = 'git log -n 5';
-    const d = await getOutputFromCommand(command);
-    core.info(d);
-    process.exit();
-    const diffCommand = `git diff -m --name-status ${commit}^..${commit}`;
+    const diffCommand = `git diff --name-status -m origin/master ${commit}^`;
     const diff = await getOutputFromCommand(diffCommand);
-    core.info(diff);
-    const files = diff && diff.split('\n');
-    if (files && file.length) {
-      for (let file of files) {
-        const [ change, filename ] = file.split(/\s+/);
-        core.info(change + ' - ' + filename);
-      }
+    const files = diff && diff.trim().split('\n');
+    if (files && files.length) {
+      const learnFileRegex = /^curriculum\/challenges\/english\//;
+      const learnFiles = files
+        .map(file => {
+          const [ change, filename ] = file.split(/\s+/);
+          return { change, filename };
+        })
+        .filter(file => learnFileRegex.test(file.filename));
+      console.log(
+        learnFiles.length
+          ? 'learn files in commit\n' + JSON.stringify(learnFiles, null, 2)
+          : 'no learn files in commit'
+      );
     }
     core.info('done');
     process.exit();
