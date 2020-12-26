@@ -1,5 +1,5 @@
 const core = require("@actions/core");
-const { getOutputFromCommand, crodinMethods: crowdin } = require('./utils');
+const { getOutputFromCommand, crowdinMethods: crowdin } = require('./utils');
 const learnDir = '';
 // incorporate the following into diffCommand once sure everything works
 // const learnDir = ' -- curriculum/challenges/english';
@@ -47,7 +47,7 @@ const learnRegex = /^curriculum\/challenges\/english\/\d\d-(?!certifications)/;
         });
       console.log(
         learnFiles.length
-          ? 'learn files in commit\n' + JSON.stringify(learnFiles, null, 2)
+          ? 'learn curriculum in commit\n' + JSON.stringify(learnFiles, null, 2)
           : 'no learn files in commit'
       );
     }
