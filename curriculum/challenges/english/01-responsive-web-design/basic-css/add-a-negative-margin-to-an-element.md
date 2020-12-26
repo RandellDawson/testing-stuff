@@ -12,6 +12,8 @@ An element's `margin` controls the amount of space between an element's `border`
 
 If you set an element's `margin` to a negative value, the element will grow larger.
 
+Added text to description
+
 # --instructions--
 
 Try to set the `margin` to a negative value like the one for the red box.
