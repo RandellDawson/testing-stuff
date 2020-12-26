@@ -20,8 +20,11 @@ const getOutputFromCommand = async (command) => {
   try {
     const commit = core.getInput('commit-sha');
     core.info(`commit #${commit} was pushed`);
-    const diffCommand = `git diff --name-status -m origin/master ${commit}^`;
+    // const diffCommand = `git diff --name-status -m origin/master ${commit}^`;
+    // const diffCommand = `git diff --name-status -m origin/master ${commit}^..${commit}`;
+    const diffCommand = `git diff --name-status -m ${commit}^ origin/master`;
     const diff = await getOutputFromCommand(diffCommand);
+    console.log(diff);
     const files = diff && diff.trim().split('\n');
     if (files && files.length) {
       const learnFileRegex = /^curriculum\/challenges\/english\//;
