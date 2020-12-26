@@ -19,15 +19,20 @@ const getOutputFromCommand = async (command) => {
 (async () => {
   try {
     const commit = core.getInput('commit-sha');
-    core.info(`commit #${commit} was pushed`);
-    // const diffCommand = `git diff --name-status -m origin/master ${commit}^`;
-    // const diffCommand = `git diff --name-status -m origin/master ${commit}^..${commit}`;
-    const diffCommand = `git diff --name-status -m ${commit}^ origin/master`;
+    core.info(`commit # pushed: ${commit}`);
+    // need to research why the following diff command does not work
+    // const diffCommand = `git diff --name-status -m ${commit}^..${commit}`;
+
+    const logCommand = `git log -n 10 --pretty=format:'%h -%d %s (%cr) <%an>' --abbrev-commit > log.txt`;
+    const log = await getOutputFromCommand(logCommand);
+
+    const diffCommand = `git diff --name-status -m ${commit}^..${commit}`;
     const diff = await getOutputFromCommand(diffCommand);
     console.log(diff);
+
     const files = diff && diff.trim().split('\n');
     if (files && files.length) {
-      const learnFileRegex = /^curriculum\/challenges\/english\//;
+      const learnFileRegex = /^curriculum\/challenges\/english\/\d\d-(?!certifications)/;
       const learnFiles = files
         .map(file => {
           const [ change, filename ] = file.split(/\s+/);
@@ -40,14 +45,8 @@ const getOutputFromCommand = async (command) => {
           : 'no learn files in commit'
       );
     }
-    core.info('done');
+    core.info('action complete');
     process.exit();
-    let prevCommitCommand = `git show ${commit}^:${filepath}`;
-    let currCommitCommand = `git show ${commit}:${filepath}`;
-
-    const oldContent = await getOutputFromCommand(prevCommitCommand);
-    const newContent = await getOutputFromCommand(currCommitCommand);
-    core.info(oldContent + '\n************\n' + newContent);
   } catch (error) {
     core.setFailed(error.message);
   }

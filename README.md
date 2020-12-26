@@ -4,3 +4,6 @@ fun
 
 
 new text
+
+
+modified main readme
