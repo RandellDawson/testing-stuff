@@ -3,7 +3,7 @@ const { getOutputFromCommand, crowdinMethods: crowdin } = require('./utils');
 const learnDir = '';
 // incorporate the following into diffCommand once sure everything works
 // const learnDir = ' -- curriculum/challenges/english';
-const learnRegex = /^curriculum\/challenges\/english\/\d\d-(?!certifications)/;
+const learnRegex = /^curriculum\/challenges\/english\/\d\d-(?!certificates)/;
 
 (async () => {
   try {

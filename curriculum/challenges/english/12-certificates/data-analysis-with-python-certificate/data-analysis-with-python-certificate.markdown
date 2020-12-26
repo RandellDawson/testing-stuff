@@ -1,6 +1,6 @@
 ---
 id: 5e46fc95ac417301a38fb934
-title: Data Analysis with Python Certificate
+title: Data Analysis with Python Certificate change
 challengeType: 7
 isPrivate: true
 ---
