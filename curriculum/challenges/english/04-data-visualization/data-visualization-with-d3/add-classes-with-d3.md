@@ -13,7 +13,7 @@ The `attr()` method works the same way that `style()` does. It takes comma-separ
 
 `selection.attr("class", "container");`
 
-Note that the "class" parameter will remain the same whenever you need to add a class and only the "container" parameter will change.
+Note that the "class" parameter will remain the same whenever you need to add a class and only the "container" parameter will change.  Added an extra note here.
 
 # --instructions--
 
