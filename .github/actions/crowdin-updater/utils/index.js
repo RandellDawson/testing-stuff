@@ -1,6 +1,5 @@
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
-const crowdinMethods = require('./crowdin');
 
 const getOutputFromCommand = async (command) => {
   try {
@@ -17,6 +16,5 @@ const getOutputFromCommand = async (command) => {
 };
 
 module.exports = {
-  getOutputFromCommand,
-  crowdinMethods
+  getOutputFromCommand
 };
