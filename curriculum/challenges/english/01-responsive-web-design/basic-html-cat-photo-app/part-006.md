@@ -6,7 +6,7 @@ challengeType: 0
 
 # --description--
 
-HTML elements are often nested within other HTML elements. In the previous step you nested the `h2` element, comment and `p` element within the `main` element. A nested element is a child of its parent element.
+HTML elements are often nested within other HTML elements. In the previous step you nested the `h2` element, comment and `p` element within the `main` element. A nested element is a child of its parent element. added some text
 
 To make HTML easier to read, indent the `h2` element, the comment, and `p` element exactly two spaces to indicate they are children of the `main` element.
 
