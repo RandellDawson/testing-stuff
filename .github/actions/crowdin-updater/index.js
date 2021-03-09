@@ -15,11 +15,11 @@ const action = async () => {
     if (files && files.length) {
       changedCurriculumFiles = await defineFileChanges(files, commit);
     }
-    core.info('action complete');
   } catch (error) {
     core.setFailed(error.message);
   }
   console.log(JSON.stringify(changedCurriculumFiles, null, 2));
+  core.info('action complete');
   return null;
 };
 
